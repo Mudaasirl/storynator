@@ -1,0 +1,79 @@
+{% extends 'blog/base.html' %}
+<!--  
+    <form method="post" action="{% url 'voice-upload' %}" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Upload</button>
+    </ > -->
+
+{% block content %}
+
+<header class="flex-col fill-white stroke-[4px] stroke-black overflow-hidden self-center relative flex min-h-[450px] max-h-[500px] justify-center items-center m-14 mt-25  mx-auto  max-w-[1000px] border-4 border-black bg-yellow-200	rounded-lg shadow-[5px_5px_0px_0px_rgba(109,40,217)]">
+  
+  <div class="relative flex  flex-col items-stretch mt-1 mb-5 w-5/6 ">
+    <form method="post" action="{% url 'voice-upload' %}" enctype="multipart/form-data" class="max-w-md mx-auto">
+      {% csrf_token %}
+      
+      <!-- Voice Sample 1 -->
+      <div class="mb-4">
+          <label for="{{ form.voice_sample_1.id_for_label }}" class="block text-gray-700 text-sm font-bold mb-2">Voice Sample 1:</label>
+          <div class="relative">
+            <span class="sr-only">Choose profile photo</span>
+              <input type="file" name="{{ form.voice_sample_1.name }}" id="{{ form.voice_sample_1.id_for_label }}" class="file-input file-input-bordered file-input-accent w-full max-w-xs">
+             
+              <span id="file-name-1" class="ml-2"></span>
+          </div>
+      </div>
+  
+      <!-- Voice Sample 2 -->
+      <div class="mb-4">
+          <label for="{{ form.voice_sample_2.id_for_label }}" class="block text-gray-700 text-sm font-bold mb-2">Voice Sample 2:</label>
+          <div class="relative">
+              <input type="file" name="{{ form.voice_sample_2.name }}" id="{{ form.voice_sample_2.id_for_label }}" class="file-input file-input-bordered file-input-accent w-full max-w-xs">
+             
+              <span id="file-name-2" class="ml-2"></span>
+          </div>
+      </div>
+  
+      <!-- Voice Sample 3 -->
+      <div class="mb-4">
+        <span class="sr-only">Choose profile photo</span>
+          <label for="{{ form.voice_sample_3.id_for_label }}" class="block text-gray-700 text-sm font-bold mb-2">Voice Sample 3:</label>
+          <div class="relative">
+              <input type="file" name="{{ form.voice_sample_3.name }}" id="{{ form.voice_sample_3.id_for_label }}" class="file-input file-input-bordered file-input-accent w-full max-w-xs">
+             
+              <span id="file-name-3" class="ml-2"></span>
+          </div>
+      </div>
+  
+      <!-- ... other form fields ... -->
+  
+      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 btn glass">Upload</button>
+  
+      <!-- Add custom styling and behavior using JavaScript -->
+      <script>
+          document.addEventListener('DOMContentLoaded', function () {
+              function setupFileInput(fileInputId, fileNameSpanId) {
+                  const fileInput = document.getElementById(fileInputId);
+                  const fileNameSpan = document.getElementById(fileNameSpanId);
+  
+                  if (fileInput) {
+                      fileInput.addEventListener('change', function () {
+                          const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
+                          fileNameSpan.textContent = fileName;
+                      });
+                  }
+              }
+  
+              setupFileInput('{{ form.voice_sample_1.id_for_label }}', 'file-name-1');
+              setupFileInput('{{ form.voice_sample_2.id_for_label }}', 'file-name-2');
+              setupFileInput('{{ form.voice_sample_3.id_for_label }}', 'file-name-3');
+          });
+      </script>
+  </form>
+  
+  </div>  
+    </header>  
+
+
+ {% endblock %}

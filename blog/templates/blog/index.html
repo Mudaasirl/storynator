@@ -1,0 +1,24 @@
+{% extends "blog/base.html" %} {% block content %} 
+<h1>list of all posts </h1>
+{% for post in posts %}
+
+<article class="media content-section post-box">
+  <div class="post-header">
+    <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+  </div>
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="mr-2" href="#">{{ post.author }}</a>
+      <small class="text-muted">{{ post.date|date:"F d, Y" }}</small>
+    </div>
+    <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+    <p class="article-content">{{ post.content }}</p>
+    <audio controls >
+      <source src=" {% if post.author.profile.awaaz %} {{ post.author.profile.awaaz.url }} {% endif %}" type="audio/wav">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+</article>
+
+
+{% endfor %} {% endblock content %}

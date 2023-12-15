@@ -1,0 +1,34 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% if post %}
+
+      <body class="bg-light lead">
+        <div class="container mt-5">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                  <figure class=" p-4 text-center text-warning mb-4">
+                    <blockquote class="blockquote">
+                      <h1>{{post.title}}.</h1>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                      generated using prompt given by  <cite title="Source Title">{{post.author}}</cite>
+                    </figcaption>
+                  </figure>
+                    <!-- Story Box -->
+                    <div class="mb-3">
+                        <!-- Story Text -->
+                        <p class="text-muted">{{post.content}}</p>
+    
+                        <!-- Audio Narration -->
+                        <div class="text-right">
+                          <audio controls >
+                            <source src=" {% if post.author.profile.voice_sample_1 %} {{ post.author.profile.voice_sample_1.url }} {% endif %}" type="audio/wav">
+                            Your browser does not support the audio element.
+                          </audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div
+{% endif %}
+{%endblock content%}  

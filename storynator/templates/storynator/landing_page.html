@@ -1,0 +1,74 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="bg-rose-50	 min-h-screen h-[450vh]  sm:h-[200vh] md:h-[450vh]">
+  
+  <div class="grid grid-rows-4 h-full">
+  
+    <div class="h-full bg-rose-50 flex flex-col justify-center items-center text-center">
+      <header class="flex max-w-[496px] flex-col items-stretch px-5 py-1">
+        <h1 class="text-yellow-200 text-center text-5xl font-bold leading-[56px]  w-full mt-2.5 max-md:max-w-full max-md:text-4xl max-md:leading-10">Unleash Your  <br /><span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block p-2">
+          <span class="relative text-white">Imagination</span> </h1>
+        <p class="text-black text-center text-2xl leading-7 max-w-[363px] self-center mt-8"> Master Your Story: Welcome to Storynator!</p>
+        <button class="text-white text-center text-base font-bold leading-5 whitespace-nowrap justify-center items-stretch border-[color:var(--Black,#000)] shadow-sm bg-purple-500 self-center mt-14 p-2.5 border-2 border-solid max-md:mt-10"> Get started </button>
+      </header>
+    </div>
+    <div class="h-full bg-rose-50">
+      <div class="h-full bg-rose-50 flex flex-row justify-center items-center text-center">
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/5e42edaf9dc8e7d0c0df08d9adf627cc6233d9b311763d32ff47b5afb2d4cdd9?apiKey=26375cc6e2cd49d5bb8228a22892d56e&"
+          class="aspect-[1.03] object-contain object-center  overflow-hidden max-w-full mt-1 s"
+          />
+          <div>
+            <h1 class="text-black text-center text-5xl font-bold leading-[56px]  w-full mt-1.5 max-md:max-w-full max-md:text-4xl max-md:leading-10">Globally available</h1>
+            We are expanding to over 110+ countries
+          </div>
+      </div>
+    </div>
+    <div class="h-full bg-rose-50">
+      <div class="h-full bg-rose-50 flex flex-row-reverse justify-center items-center text-center">
+        <img
+          loading="lazy"
+          src="{% static 'yellowcash.png' %}"
+          class="aspect-[1.03] object-contain  object-center  overflow-hidden max-w-full mt-1 s"
+          />
+          <div>
+            <h1 class="text-black text-center text-5xl font-bold leading-[56px]  w-full mt-1.5 max-md:max-w-full max-md:text-4xl max-md:leading-10">Globally available</h1>
+            We are expanding to over 110+ countries
+          </div>
+      </div>
+    </div>
+    <div class="h-full bg-rose-50 flex flex-col justify-end flex-wrap">
+      <header class="border-[color:var(--Black,#000)] bg-white flex items-center justify-between gap-5 pl-16 pr-20 py-12 border-2 border-solid max-md:flex-wrap max-md:px-5">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/cb34a5910b6b7b50a31aff6e5b5be21fa2f7f9801ee2ea3d93d74105492af765?apiKey=26375cc6e2cd49d5bb8228a22892d56e&" class="aspect-square object-contain object-center w-[92px] fill-purple-500 stroke-[2px] stroke-black overflow-hidden shrink-0 max-w-full self-start" />
+        <div class="flex items-stretch justify-between gap-5 mt-1 self-start max-md:max-w-full max-md:flex-wrap max-md:justify-center">
+          <div class="flex grow basis-[0%] flex-col items-stretch">
+            <div class="text-black text-center text-2xl font-bold leading-5 tracking-tighter whitespace-nowrap">Service</div>
+            <div class="text-black text-base leading-3 tracking-tighter whitespace-nowrap mt-4">Personal</div>
+            <div class="text-black text-base leading-3 tracking-tighter whitespace-nowrap mt-2.5">Business</div>
+            <div class="text-black text-base leading-3 tracking-tighter whitespace-nowrap mt-2.5">Enterprise</div>
+          </div>
+          <div class="flex grow basis-[0%] flex-col items-stretch self-start">
+            <div class="text-black text-2xl font-bold leading-5 tracking-tighter">API</div>
+            <div class="text-black text-base leading-3 tracking-tighter whitespace-nowrap mt-4">Developer contact</div>
+            <div class="text-black text-base leading-3 tracking-tighter mt-2">Documentation</div>
+          </div>
+          <div class="flex grow basis-[0%] flex-col items-stretch self-start">
+            <div class="text-black text-2xl font-bold leading-5 tracking-tighter whitespace-nowrap">Company</div>
+            <div class="text-black text-base leading-3 tracking-tighter whitespace-nowrap mt-3">About us</div>
+            <div class="text-black text-base leading-3 tracking-tighter mt-3">Careers</div>
+            <div class="text-black text-base leading-3 tracking-tighter whitespace-nowrap mt-3">Investors</div>
+          </div>
+        </div>
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ce5b79c5dd664cc401945c1db3e3d676cd7b4ac4d1a8be253037f90642efcbd1?apiKey=26375cc6e2cd49d5bb8228a22892d56e&" class="aspect-[4.75] object-contain object-center w-[152px] overflow-hidden shrink-0 max-w-full my-auto" />
+      </header>
+      </div>
+    </div>
+    
+    <!-- Add more child div elements as needed -->
+  </div>
+</div>
+
+{% endblock %}

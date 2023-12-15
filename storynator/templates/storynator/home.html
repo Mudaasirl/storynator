@@ -1,0 +1,56 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+  
+<!--       
+      <div  class="artboard phone-4">
+            <h1> Welcome to Storynator </h1>      
+        <form action="{% url 'home-view' %}" method="post">
+          {% csrf_token %}
+        <input id="prompt" type="text" class="form-control border border-dark" name="prompt" maxlength="100" required>
+        <button type="submit" class="btn btn-primary mt-2 ">Submit</button>
+        </form>       
+</div> -->
+
+<header class="flex-col fill-white stroke-[4px] stroke-black overflow-hidden self-center relative flex min-h-[450px] max-h-[500px] justify-center items-center m-14 mt-25  mx-auto  max-w-[1000px] border-4 border-black bg-white	rounded-lg shadow-[5px_5px_0px_0px_rgba(109,40,217)]">
+  
+  <div class="relative flex  flex-col items-stretch mt-1 mb-5 w-5/6 ">
+    <div class="text-black text-center text-3xl font-bold leading-10 self-center  overflow-hidden">
+     <h1> Welcome to  <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block p-2">
+      <span class="relative text-white">Storynator</span>
+    </span>  </h1>
+      <p class="text-sm  whitespace-wrap text-slate-500  hover:text-teal-600 mt-2">Welcome to storynator!  The ultimate destination for limitless creativity and immersive storytelling. Whether you're a seasoned wordsmith or just starting your journey into the world of narrative, Storynator is here to ignite your imagination and help you craft tales that captivate and inspire.</p>      
+    </div>
+    
+<!--     
+    <form action="{% url 'home-view' %}" method="post">
+        {% csrf_token %}
+        <div class="flex flex-col items-center">
+          <input id="prompt" type="text" class="w-full text-black text-base leading-5 whitespace-nowrap border-[color:var(--Black,#000)] mt-11 pl-2.5 pr-16 py-2.5 border-2 border-solid max-md:pr-5 mb-2" name="prompt" maxlength="100" required>
+          <button class="text-white text-center text-base font-bold leading-5 whitespace-nowrap items-stretch border-[color:var(--Black,#000)] shadow-sm bg-purple-500 self-center mt-17 p-2.5 border-2 border-solid w-3/6 max-md:mt-10">
+            Sign Up
+          </button>
+        </div>
+    </form>  -->
+    <div >
+      <label for="price" class="block text-sm font-medium leading-6 text-gray-900"></label>
+      <div class="relative mt-2 rounded-md shadow-sm">
+        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 ">
+          <span class="text-gray-500 sm:text-sm">></span>
+        </div>
+        <form action="{% url 'home-view' %}" method="post">
+          {% csrf_token %}
+        <input id="prompt" type="text" name="prompt" id="price" class="block w-full rounded-md  py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset border-2 border-black border-solid sm:text-sm sm:leading-6 " placeholder="enter your prompt">
+        <div class="absolute inset-y-0 right-0 flex items-center ">
+          <label for="currency" class="sr-only">Currency</label>
+          <button id="currency" name="currency" class="h-full rounded-md border-1 bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-black-800 sm:text-sm border-2 border-black  hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 ">
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+</header>
+
+{%endblock content%}  

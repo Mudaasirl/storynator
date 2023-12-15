@@ -1,0 +1,117 @@
+{
+  "selectedTemplate": 9,
+  "headings": {
+    "projects": "Projects",
+    "awards": "",
+    "education": "Education",
+    "skills": "Skills"
+  },
+  "basics": {
+    "name": "Mohd Mudassir",
+    "email": "itsmudassir14@gmail.com",
+    "phone": "8465899019",
+    "location": {
+      "address": "Telangana, HYD"
+    }
+  },
+  "education": [
+    {
+      "institution": "Nawab Shah Alam Khan College Of Engineering Of Technology",
+      "area": "Information Technology",
+      "studyType": "Bachelor of engineering",
+      "startDate": "Nov 2020",
+      "endDate": "July 2024",
+      "gpa": "8.0",
+      "location": "Malakpet, HYD"
+    },
+    {
+      "institution": "MS Junior College",
+      "location": "Malakpet, HYD",
+      "area": "MPC",
+      "gpa": "7.8",
+      "startDate": "June 2018",
+      "endDate": "June 2020"
+    },
+    {}
+  ],
+  "work": [
+    {
+      "company": "",
+      "location": "",
+      "position": "",
+      "website": "",
+      "startDate": "",
+      "endDate": "",
+      "highlights": [
+        ""
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "level": "",
+      "keywords": [
+        "Developed responsive websites using HTML/CSS and Bootstrap."
+      ],
+      "name": "Frontend"
+    },
+    {
+      "keywords": [
+        " Utilized Python, Django, and Express.js frameworks to develop backend solutions for web applications."
+      ],
+      "name": "Backend"
+    },
+    {
+      "keywords": [
+        " Managed and optimized databases such as MySQL and MongoDB using Django ORM."
+      ],
+      "name": "Database"
+    },
+    {
+      "keywords": [
+        "Developed a C/C++ application as part of a team project, contributing to the implementation of various functionalities and ensuring code quality and efficiency."
+      ],
+      "name": "C/C++"
+    },
+    {
+      "keywords": [
+        "Actively pursuing professional development in backend development and DevOps methodologies, completing online courses on Kubernetes, Docker, and other relevant technologies to expand skill set and contribute to streamlined software development workflows."
+      ],
+      "name": "Devops"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Storynator",
+      "keywords": [
+        "Django",
+        "Bootstrap",
+        "SQLite",
+        "Docker"
+      ],
+      "description": "- Independently designed and developed a Django web application that utilized ChatGPT API and Eleven Labs API to enable automated storytelling, incorporating features such as user authentication and dynamic content generation.- Demonstrated proficiency in MySQL by designing and implementing a database schema for a web application project, ensuring efficient data storage and retrieval mechanisms while considering scalability requirements.",
+      
+
+    },
+    {
+
+    }
+  ],
+  "awards": [
+    {
+      "title": "",
+      "date": "",
+      "awarder": "",
+      "summary": ""
+    }
+  ],
+  "sections": [
+    "templates",
+    "profile",
+    "education",
+    "work",
+    "skills",
+    "projects",
+    "awards"
+  ]
+}
