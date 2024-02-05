@@ -1,8 +1,8 @@
-
+from dotenv import load_dotenv
 from pathlib import Path
 from environs import Env  # new
 import os
-
+load_dotenv()
 env = Env()  # new
 env.read_env()  # new
 

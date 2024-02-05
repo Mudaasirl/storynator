@@ -8,6 +8,7 @@ class Profile(models.Model):
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
     voice = models.FileField(upload_to='media/', blank=True, null=True)
     awaaz  = models.FileField(upload_to='voices/', blank=True, null=True)
+    
     voice_sample_1  = models.FileField(upload_to='voice_samples/', blank=True, null=True)
     voice_sample_2  = models.FileField(upload_to='voice_samples/', blank=True, null=True)
     voice_sample_3  = models.FileField(upload_to='voice_samples/', blank=True, null=True)
@@ -22,3 +23,12 @@ class Profile(models.Model):
             output_size = (300, 300)
             img.thumbnail(output_size) # Resize image
             img.save(self.image.path) # Save it again and override the larger image
+
+class Image(models.Model):
+    key = models.CharField(help_text="The public id of the uploaded file", max_length=100)
+    url = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, help_text='The original name of the uploaded image')
+    width = models.IntegerField(help_text='Width in pixels')
+    height = models.IntegerField(help_text='Height in pixels')
+    format = models.CharField(max_length=10)
+    created_at = models.DateTimeField(auto_now_add=True)

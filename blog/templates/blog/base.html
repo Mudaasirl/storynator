@@ -17,7 +17,9 @@
          
 
       <nav class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 pr-16 md:pr-5">
+        <a href="{%url 'landing-page-view'%}" >
         <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/cb34a5910b6b7b50a31aff6e5b5be21fa2f7f9801ee2ea3d93d74105492af765?apiKey=26375cc6e2cd49d5bb8228a22892d56e&" class="aspect-square object-contain object-center w-[92px] fill-purple-500 stroke-[2px] stroke-black overflow-hidden shrink-0 max-w-full" />
+        </a>
         <div class="flex items-start justify-between gap-5 my-auto">
             <!-- Your code here -->
        
@@ -64,6 +66,32 @@
       {% endfor%} {% endif %} {% block content %}{% endblock %}     
     </div>
    
+  </div>
+</div>
+<div class="h-full bg-rose-50 flex flex-col justify-end flex-wrap">
+  <header class="border-[color:var(--Black,#000)] bg-white flex items-center justify-between gap-5 pl-16 pr-20 py-12 border-2 border-solid max-md:flex-wrap max-md:px-5">
+    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/cb34a5910b6b7b50a31aff6e5b5be21fa2f7f9801ee2ea3d93d74105492af765?apiKey=26375cc6e2cd49d5bb8228a22892d56e&" class="aspect-square object-contain object-center w-[92px] fill-purple-500 stroke-[2px] stroke-black overflow-hidden shrink-0 max-w-full self-start" />
+    <div class="flex items-stretch justify-between gap-5 mt-1 self-start max-md:max-w-full max-md:flex-wrap max-md:justify-center">
+      <div class="flex grow basis-[0%] flex-col items-stretch">
+        <div class="text-black text-center text-2xl font-bold leading-5 tracking-tighter whitespace-nowrap">Service</div>
+        <div class="text-black text-base leading-3 tracking-tighter whitespace-nowrap mt-4">Personal</div>
+        <div class="text-black text-base leading-3 tracking-tighter whitespace-nowrap mt-2.5">Business</div>
+        <div class="text-black text-base leading-3 tracking-tighter whitespace-nowrap mt-2.5">Enterprise</div>
+      </div>
+      <div class="flex grow basis-[0%] flex-col items-stretch self-start">
+        <div class="text-black text-2xl font-bold leading-5 tracking-tighter">API</div>
+        <div class="text-black text-base leading-3 tracking-tighter whitespace-nowrap mt-4">Developer contact</div>
+        <div class="text-black text-base leading-3 tracking-tighter mt-2">Documentation</div>
+      </div>
+      <div class="flex grow basis-[0%] flex-col items-stretch self-start">
+        <div class="text-black text-2xl font-bold leading-5 tracking-tighter whitespace-nowrap">Company</div>
+        <div class="text-black text-base leading-3 tracking-tighter whitespace-nowrap mt-3">About us</div>
+        <div class="text-black text-base leading-3 tracking-tighter mt-3">Careers</div>
+        <div class="text-black text-base leading-3 tracking-tighter whitespace-nowrap mt-3">Investors</div>
+      </div>
+    </div>
+    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ce5b79c5dd664cc401945c1db3e3d676cd7b4ac4d1a8be253037f90642efcbd1?apiKey=26375cc6e2cd49d5bb8228a22892d56e&" class="aspect-[4.75] object-contain object-center w-[152px] overflow-hidden shrink-0 max-w-full my-auto" />
+  </header>
   </div>
 </div>
 </body>
