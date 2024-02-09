@@ -1,5 +1,16 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse,HttpRequest
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.views import APIView
+from django.utils.decorators import method_decorator
+from django.contrib.auth import authenticate, login
+from google.oauth2 import id_token
+from google.auth.transport import requests
+import jwt
+
+from django.contrib.auth.models import User
+
 from .forms import DocumentForm
 from blog.models import Post
 from users.models import Profile
@@ -16,6 +27,67 @@ load_dotenv()
 api_key = os.getenv('OPENAI_KEY',None)
 elevenLabs_key = os.getenv('ELEVENLABS_KEY',None)
 set_api_key(elevenLabs_key)
+
+
+@csrf_exempt
+def auth_receiver(request):
+    """
+    Google calls this URL after the user has signed in with their Google account.
+    """
+    token = request.POST['credential']
+    try:
+        user_data = id_token.verify_oauth2_token(
+            token, requests.Request(), os.environ['GOOGLE_OAUTH_CLIENT_ID']
+        )
+    except ValueError:
+        return HttpResponse(status=403)
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class AuthGoogle(APIView):  
+    """
+    Google calls this URL after the user has signed in with their Google account.
+    """
+    def post(self, request, *args, **kwargs):
+        try:
+            user_data = self.get_google_user_data(request)
+        except ValueError:
+            return HttpResponse("Invalid Google token", status=403)
+        
+        email = user_data["email"]
+        try:
+            user, created = User.objects.get_or_create(
+                email=email, defaults={
+                    "email": email,                
+                }
+            )
+            
+            profile, _ = Profile.objects.get_or_create(
+                user=user, defaults={"user": user,"user__username": user_data["given_name"]}
+            )                
+            
+            login(request, profile.user)
+            request.session['user_data'] = user_data
+            return redirect('sign_in')
+
+        except Exception as e:
+            # Handle the exception here
+            # You can log the error or return an appropriate response
+            return HttpResponse("Error occurred while creating/fetching user or profile: " + str(e), status=500)
+
+    @staticmethod
+    def get_google_user_data(request: HttpRequest):
+        token = request.POST['credential']
+        return id_token.verify_oauth2_token(
+            token, requests.Request(), os.environ['GOOGLE_OAUTH_CLIENT_ID']
+        )
+
+def sign_in(request):
+    return render(request, 'storynator/sign_in.html')
+    
+def sign_out(request):
+    del request.session['user_data']
+    return redirect('sign_in')
 
 def landing_page_view(request):
     context={

@@ -23,7 +23,7 @@ SECRET_KEY = env.str(
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
-DEBUG = env.bool("DEBUG", default=False)  # new
+DEBUG = env.bool("DEBUG", default=True)  # new
 #ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ["*"]  
 CSRF_TRUSTED_ORIGINS = ["https://*.fly.dev"]  
@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'allauth.account', # new
     'allauth.socialaccount', # new
     'allauth.socialaccount.providers.github', # new
+    'rest_framework',
+
 ]
 
 MIDDLEWARE = [
@@ -144,11 +146,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
-AUTHENTICATION_BACKENDS = (
-    "django.contrib.auth.backends.ModelBackend",
-    "allauth.account.auth_backends.AuthenticationBackend",
-)
 
+# my_project/settings.py
+SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
+SECURE_CROSS_ORIGIN_OPENER_POLICY = "same-origin-allow-popups"
 SITE_ID = 1
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
